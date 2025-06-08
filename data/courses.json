@@ -1,0 +1,12 @@
+{
+    "SE-201": {
+        "name": "OOSE-2",
+        "department": "SE",
+        "instructor": "Dr Hema"
+    },
+    "SE-202": {
+        "name": "ADA",
+        "department": "SE",
+        "instructor": "Dr Rama Krishnan"
+    }
+}

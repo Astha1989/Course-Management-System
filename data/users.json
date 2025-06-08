@@ -1,0 +1,26 @@
+{
+    "admin1": {
+        "password": "admin123",
+        "role": "admin"
+    },
+    "Astha": {
+        "password": "pass123",
+        "role": "student"
+    },
+    "student1": {
+        "password": "pass123",
+        "role": "student"
+    },
+    "student2": {
+        "password": "pass123",
+        "role": "student"
+    },
+    "DrHema": {
+        "password": "pass123",
+        "role": "faculty"
+    },
+    "DrRama": {
+        "password": "pass123",
+        "role": "faculty"
+    }
+}

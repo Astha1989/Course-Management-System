@@ -1,0 +1,15 @@
+{
+    "SE-201": {
+        "grades": {
+            "SE/2020/101": "91",
+            "SE/2020/102": "80"
+        },
+        "student1": "My first submissions\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n200 words."
+    },
+    "SE-202": {
+        "grades": {
+            "SE/2020/101": "75",
+            "SE/2020/102": "60"
+        }
+    }
+}
