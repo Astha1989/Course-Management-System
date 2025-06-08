@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Course Material</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h2>Download Course Material</h2>
+</header>
+    <ul>
+        {% for course, materials_list in materials.items() %}
+            <h3>{{ course }}</h3>
+            <ul>
+                {% for item in materials_list %}
+                    <li><strong>{{ item.title }}</strong>: {{ item.content }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    <footer><p>&copy; 2025 Course Management System</p></footer>
+
+
+</body>
+</html>

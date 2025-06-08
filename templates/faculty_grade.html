@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Submissions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h2>Grade Submissions</h2>
+</header>
+
+    <form method="POST">
+        <label for="course">Course ID:</label><br>
+        <input type="text" id="course" name="course" required><br><br>
+
+        <label for="student">Student ID:</label><br>
+        <input type="text" id="student" name="student" required><br><br>
+
+        <label for="grade">Grade:</label><br>
+        <input type="text" id="grade" name="grade" required><br><br>
+
+        <input type="submit" value="Submit Grade">
+    </form>
+
+    <h3>Submissions:</h3>
+    {% for course, students in submissions.items() %}
+        <h4>{{ course }}</h4>
+        <ul>
+            {% for student, data in students.items() %}
+                {% if student != 'grades' %}
+                <li>{{ student }} submitted: {{ data }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    <footer><p>&copy; 2025 Course Management System</p></footer>
+
+
+</body>
+</html>

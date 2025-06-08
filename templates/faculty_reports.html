@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h2>Faculty Reports</h2>
+</header>
+    <h3>Attendance Records:</h3>
+    {% for student, records in attendance.items() %}
+        <strong>{{ student }}</strong>
+        <ul>
+            {% for course, percent in records.items() %}
+                <li>{{ course }}: {{ percent }}%</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h3>Submission Grades:</h3>
+    {% for course, data in submissions.items() %}
+        {% if data.get('grades') %}
+            <h4>{{ course }}</h4>
+            <ul>
+                {% for student, grade in data['grades'].items() %}
+                    <li>{{ student }}: Grade {{ grade }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    <footer><p>&copy; 2025 Course Management System</p></footer>
+
+
+</body>
+</html>

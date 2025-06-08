@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header><h1>Dashboard</h1></header>
+    <h2>Welcome, {{ user }} ({{ role }})</h2>
+
+    {% if role == 'admin' %}
+        <ul>
+            <li><a href="{{ url_for('manage_students') }}">Manage Students</a></li>
+            <li><a href="{{ url_for('manage_faculty') }}">Manage Faculty</a></li>
+            <li><a href="{{ url_for('manage_courses') }}">Manage Courses</a></li>
+        </ul>
+    {% elif role == 'student' %}
+        <ul>
+            <li><a href="{{ url_for('student_download') }}">Download Course Material</a></li>
+            <li><a href="{{ url_for('student_submit') }}">Submit Assignments</a></li>
+            <li><a href="{{ url_for('student_attendance') }}">View Attendance</a></li>
+            <li><a href="{{ url_for('student_classmates') }}">View Classmates</a></li>
+        </ul>
+    {% elif role == 'faculty' %}
+        <ul>
+            <li><a href="{{ url_for('faculty_upload_material') }}">Upload Course Material</a></li>
+            <li><a href="{{ url_for('faculty_grade') }}">Grade Submissions</a></li>
+            <li><a href="{{ url_for('faculty_upload_assignment') }}">Upload Assignments</a></li>
+            <li><a href="{{ url_for('faculty_avg_perf') }}">View Average Performance</a></li>
+            <li><a href="{{ url_for('faculty_reports') }}">Generate Reports</a></li>
+        </ul>
+    {% endif %}
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <footer><p>&copy; 2025 Course Management System</p></footer>
+
+</body>
+</html>
+

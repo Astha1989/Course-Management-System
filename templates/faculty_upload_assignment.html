@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Assignment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h2>Upload Assignment</h2>
+</header>
+    <form method="POST">
+        <label for="course">Course ID:</label><br>
+        <input type="text" id="course" name="course" required><br><br>
+
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea name="description" rows="4" cols="40" required></textarea><br><br>
+
+        <input type="submit" value="Upload Assignment">
+    </form>
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    <footer><p>&copy; 2025 Course Management System</p></footer>
+
+
+</body>
+</html>
