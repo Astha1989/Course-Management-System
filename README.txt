@@ -4,13 +4,9 @@
 
 1. Make sure you have Python installed (3.6+ recommended).
 2. Install Flask:
-   ```
    pip install flask
-   ```
 3. Run the app:
-   ```
    python app.py
-   ```
 
 ## Features
 
@@ -36,4 +32,3 @@
 - `templates/`: HTML templates
 - `app.py`: Main application
 
-Enjoy managing your course system!
